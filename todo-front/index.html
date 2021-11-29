@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>todolist</title>
+  </head>
+  <body>
+    <section class="container">
+      <h1>Lista de Cursos</h1>
+      <img
+        src="./img/tetris.png"
+        alt="logo-tétris"
+        height="82"
+        width="82"
+        class="logo-tetris"
+      />
+      <p>
+        <input
+          id="input"
+          type="text"
+          placeholder="coloque sua tarefa "
+          class="input-task"
+        />
+        <button id="btn" class="btn-task">Adicionar Cursos</button>
+      </p>
+      <ul id="list" class="tarefas"></ul>
+    </section>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="./assets/js/main.js"></script> -->
+    <script src="./main.js"></script>
+    <script>
+      axios
+        .get('http://localhost:4000/tarefas')
+        .then((response) => console.log(response))
+        .catch((error) => console.log(error));
+    </script>
+  </body>
+</html>
